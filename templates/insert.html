@@ -1,0 +1,72 @@
+{% extends "master_template.html" %}
+    {%block title%}
+    This is the Insert Page
+    {%endblock%}
+{%block body%}
+
+<hr>
+<hr>
+  
+  <form class="form-horizontal" action="/insert" method="post" >
+    
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">Name:</label>
+      <div class="col-sm-5">
+        <input class="form-control" id="name" placeholder="Enter Name" name="name" required>
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="fname">Father Name:</label>
+      <div class="col-sm-5">
+        <input class="form-control" id="fname" placeholder="Enter Father Name" name="fname" required>
+
+      </div>
+    </div>
+
+   
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="roll_no">Roll No:</label>
+      <div class="col-sm-5">
+        <input tclass="form-control" type="number" id="roll_no" placeholder="Enter Roll No" name="roll_no" min="0" required>
+
+      </div>
+    </div>
+
+    
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="batch">batch:</label>
+      <div class="col-sm-5">
+        <select class="form-control" id="batch" name="batch">
+          {%for a in batch%}
+          <option value="{{a.batch_title}}"> {{a.batch_title}} </option>
+          {% endfor %}
+          
+        </select>
+      </div>
+    </div>
+ 
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="remaining_fee">Status</label>
+      <div class="col-sm-5">
+        <select class="form-control" id="batch" name="sts">
+          <option value="Promoted"> Promoted </option>
+          <option value="Drop Out"> Drop Out </option>
+          <option value="Admession Canceled"> Admession Canceled </option>
+          <option value="New Admession"> New Admission </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default"> Insert Fee details --> </button>
+      </div>
+    </div>
+  </form>
+{%endblock%}

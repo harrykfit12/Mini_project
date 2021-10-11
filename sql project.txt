@@ -1,0 +1,27 @@
+ Create Database Project 
+#creating batch table
+Create table batch ( ID int NOT NULL AUTO_INCREMENT, batch_title Varchar(255) NOT NULL, PRIMARY KEY (iD));
+INSERT INTO batch ( batch_title) values ( 'BSIT-2017-21');
+INSERT INTO batch ( batch_title) values ( 'BSIT-2018-22');
+
+
+
+#creating students table:
+Create table Students ( id int NOT NULL AUTO_INCREMENT, 
+name Varchar(255) NOT NULL, 
+fname Varchar(255) NOT NULL,
+roll_no int(200) NOT NULL,
+batch Varchar(200) NOT NULL,
+status Varchar(20) NOT NULL,
+PRIMARY KEY (id));
+insert into students (name , fname , roll_No ,  batch , status ) VALUES ( 'Muhammad haris' , 'Haroon Rasheed' , '31' , 'BSIT-2017-21' , 'promoted');
+ 
+
+#creating fees table;
+Create table fees ( id int NOT NULL AUTO_INCREMENT, 
+total_fee int(255) NOT NULL, 
+submitted_fee int(255) NOT NULL,
+dues_cleared_till varchar(200) NOT NULL,
+roll_no int(100) NOT NUll,
+PRIMARY KEY (id));
+insert into fees ( total_fee , submitted_fee  , dues_cleared_till , roll_2) VALUES (110000 , 80000  , '7th semester' , 31);

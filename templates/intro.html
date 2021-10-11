@@ -1,0 +1,43 @@
+{% extends "master_template.html" %}
+{%block title%}
+  fee Records
+{%endblock%}
+
+{%block body%}
+<h2>View Records</h2>
+<table class="table">
+  <thead>
+    <tr>
+      
+      <th>Name</th>
+      <th>Father Name</th>
+      <th>Roll No</th>
+      <th>Batch</th>
+      <th>cleared Till</th>
+      <th>Total Fee</th>
+      <th>Submitted Fee</th>
+      <th>Remaning Fee</th>
+      <th>status</th>
+      <th>Action</th>
+
+    </tr>
+  </thead>
+    <tbody>
+      {%for k in a%}
+        <tr>
+          <td>{{k.name}}</td>    
+          <td>{{k.fname}}</td>  
+          <td>{{k.roll_no}}</td>  
+          <td>{{k.batch}}</td>
+          <td>{{k.dues_cleared_till}}</td>
+          <td>{{k.total_fee}}</td>  
+          <td>{{k.submitted_fee}}</td>  
+          <td>{{k.Remaian}}</td>
+
+          <td>{{k.status}}</td>
+          <td><a href="/update/{{k.id}}">update</a>  </td>
+        </tr>
+      {%endfor%}
+      </tbody>
+    </table>
+    {%endblock%}
